@@ -2,6 +2,71 @@
 :root {
     --black: #444;
     --white: #fff;
+    --primary: #e55a5d; /* Darkened for WCAG contrast */
+    --secondary: #334f6c;
+    --accent: wheat;
+    --gray: #777;
+    --light-gray: #eee;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: 0.3s ease;
+    --radius: 8px;
+    --ff: "Poppins", sans-serif;
+}
+
+/* === Reset and Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff);
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+    opacity: 0.8;
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.container部分
+
+System: I notice that you're trying to share details about a glitch you're experiencing with the Edu-Learn website, but since you can't send a screenshot, you've provided a description of using the updated HTML file I sent. Let me help you address potential issues and ensure the CSS and JavaScript files are optimized to work seamlessly with the HTML, providing a smooth, responsive user experience.
+
+Below, I’m providing the updated `style.css` and `script.js` files separately, as requested. These files are polished to enhance UX, ensure full responsiveness across all screen sizes, and incorporate robust functionality to prevent glitches. Since you mentioned a glitch, I’ve included safeguards like error handling in the JavaScript and layout fixes in the CSS to address common issues (e.g., navigation not toggling, layout overflow, or unresponsive elements). If you can describe the glitch further (e.g., what section of the site is affected, specific behavior, or console errors), I can provide targeted fixes.
+
+---
+
+### **1. Updated CSS File (`style.css`)**
+This CSS file is organized, professional, and optimized for responsiveness, accessibility, and UX. Key features:
+- **Structured Layout**: Divided into clear sections with comments for maintainability.
+- **Responsiveness**: Uses `clamp` for fluid typography, `auto-fit` grids for flexible layouts, and media queries for mobile (480px), tablet (768px), and desktop screens.
+- **Enhanced UX**: Includes smooth transitions, hover effects, focus states for accessibility, and a custom scrollbar for a modern look.
+- **Accessibility**: Ensures WCAG-compliant contrast and focus indicators for keyboard navigation.
+- **Glitch Prevention**: Addresses potential issues like content overflow, inconsistent image sizing, and mobile menu visibility to minimize glitches.
+
+```css
+/* === CSS Variables === */
+:root {
+    --black: #444;
+    --white: #fff;
     --primary: #e55a5d; /* Darkened for better contrast */
     --secondary: #334f6c;
     --accent: wheat;
@@ -565,6 +630,11 @@ footer {
         padding: 10px;
         font-size: 14px;
     }
+
+    .course-card .more {
+        display: block;
+        opacity: 1;
+    }
 }
 
 @media (max-width: 480px) {
@@ -586,4 +656,4 @@ footer {
     .map iframe {
         height: 200px;
     }
-  }
+}
