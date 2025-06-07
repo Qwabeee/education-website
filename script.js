@@ -61,7 +61,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
             // Close mobile menu after clicking
-            if (navLinks.classList.contains('active')) {
+            if (navLinks && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 openIcon.classList.remove('hidden');
                 closeIcon.classList.add('hidden');
@@ -77,14 +77,14 @@ if (contactForm) {
         e.preventDefault();
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
+
         // Basic validation
         if (!data.name || !data.email || !data.message) {
             alert('Please fill out all fields.');
             return;
         }
 
-        // Simulate form submission (replace with actual API call in full-stack)
+        // Simulate form submission (replace with API call in full-stack)
         console.log('Contact Form Submitted:', data);
         alert('Message sent successfully!');
         contactForm.reset();
@@ -99,7 +99,7 @@ if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const email = newsletterForm.querySelector('input[type="email"]').value;
-        
+
         // Basic validation
         if (!email) {
             alert('Please enter a valid email address.');
